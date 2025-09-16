@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven - Developers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Haven</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('visualization') }}">Visualization</a></li>
+            <li><a href="{{ url_for('prediction') }}">Prediction</a></li>
+            <li><a href="{{ url_for('chatbot.chat') }}">Chatbot</a></li>
+            <li><a href="{{ url_for('developers') }}" class="active">Developers</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Developers Section -->
+    <section class="hero">
+        <h1>Meet the Developers</h1>
+        <p>The passionate minds behind Haven.</p>
+    </section>
+
+    <section id="developers" class="section">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <!-- Developer Card 1 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/harsayazheni.jpg') }}" alt="Harsayazheni">
+                <h3>Harsayazheni</h3>
+                <p>212222040052</p>
+            </div>
+            <!-- Developer Card 2 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='images/priya.jpeg') }}" alt="Priya R">
+                <h3>Priya R</h3>
+                <p>212222040124</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
