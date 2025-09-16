@@ -6,7 +6,7 @@
     <title>Haven - Chatbot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <style>
-        /* Chatbot specific styles - customizable */
+        /* Chatbot container styles */
         .chatbot-container {
             max-width: 800px;
             margin: 2rem auto;
@@ -20,11 +20,11 @@
         }
 
         .chat-header {
-            background: linear-gradient(135deg, var(--green-soft), var(--green-gentle));
+            background: linear-gradient(135deg, #bdead5, #a7e0c7);
             padding: 1.5rem;
-            color: var(--text-color);
+            color: #333;
             text-align: center;
-            border-bottom: 2px solid var(--green-accent);
+            border-bottom: 2px solid #cde8e4;
         }
 
         .chat-header h3 {
@@ -43,7 +43,7 @@
             flex: 1;
             padding: 1.5rem;
             overflow-y: auto;
-            background: var(--green-light);
+            background: #d9f7e1;
             display: flex;
             flex-direction: column;
             gap: 1rem;
@@ -53,7 +53,7 @@
             max-width: 80%;
             padding: 1rem 1.5rem;
             border-radius: 20px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             line-height: 1.4;
             word-wrap: break-word;
             animation: fadeIn 0.3s ease-in;
@@ -61,23 +61,23 @@
 
         .user-message {
             align-self: flex-end;
-            background: var(--warm-accent);
-            color: var(--text-color);
+            background: #e6d7c5;
+            color: #333;
             border-bottom-right-radius: 5px;
         }
 
         .bot-message {
             align-self: flex-start;
             background: white;
-            color: var(--text-color);
-            border: 1px solid var(--green-accent);
+            color: #333;
+            border: 1px solid #cde8e4;
             border-bottom-left-radius: 5px;
         }
 
         .typing-indicator {
             align-self: flex-start;
             background: white;
-            border: 1px solid var(--green-accent);
+            border: 1px solid #cde8e4;
             padding: 1rem 1.5rem;
             border-radius: 20px;
             border-bottom-left-radius: 5px;
@@ -92,7 +92,7 @@
         .typing-dots span {
             height: 8px;
             width: 8px;
-            background: var(--green-gentle);
+            background: #90caf9;
             border-radius: 50%;
             animation: typing 1.4s infinite ease-in-out;
         }
@@ -104,7 +104,7 @@
         .chat-input-container {
             padding: 1.5rem;
             background: white;
-            border-top: 1px solid var(--green-accent);
+            border-top: 1px solid #cde8e4;
             display: flex;
             gap: 1rem;
             align-items: center;
@@ -113,34 +113,32 @@
         .chat-input {
             flex: 1;
             padding: 1rem 1.5rem;
-            border: 2px solid var(--green-accent);
+            border: 2px solid #cde8e4;
             border-radius: 25px;
             font-size: 1rem;
             outline: none;
-            background: var(--green-light);
-            color: var(--text-color);
-            transition: border-color 0.3s, box-shadow 0.3s;
+            background: #d9f7e1;
+            color: #333;
         }
 
         .chat-input:focus {
-            border-color: var(--green-gentle);
+            border-color: #a7e0c7;
             box-shadow: 0 0 0 3px rgba(167, 224, 199, 0.2);
         }
 
         .send-button {
             padding: 1rem 1.5rem;
-            background: var(--green-gentle);
-            color: var(--text-color);
+            background: #a7e0c7;
+            color: #333;
             border: none;
             border-radius: 25px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s;
             min-width: 80px;
         }
 
         .send-button:hover:not(:disabled) {
-            background: var(--green-soft);
+            background: #bdead5;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(167, 224, 199, 0.3);
         }
@@ -152,72 +150,10 @@
 
         .welcome-message {
             text-align: center;
-            color: var(--text-color);
+            color: #333;
             opacity: 0.7;
             font-style: italic;
             margin: 2rem 0;
-        }
-
-        /* Customization panel */
-        .customization-panel {
-            position: fixed;
-            top: 100px;
-            right: -300px;
-            width: 280px;
-            height: 400px;
-            background: white;
-            border-radius: 15px 0 0 15px;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
-            transition: right 0.3s ease;
-            z-index: 1000;
-            border: 2px solid var(--green-accent);
-        }
-
-        .customization-panel.open {
-            right: 0;
-        }
-
-        .customize-toggle {
-            position: fixed;
-            top: 120px;
-            right: 20px;
-            background: var(--green-gentle);
-            color: var(--text-color);
-            border: none;
-            padding: 10px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 1001;
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-        }
-
-        .customize-toggle:hover {
-            background: var(--green-soft);
-            transform: scale(1.1);
-        }
-
-        .custom-option {
-            margin-bottom: 1rem;
-        }
-
-        .custom-option label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        .custom-option input,
-        .custom-option select {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--green-accent);
-            border-radius: 5px;
-            background: var(--green-light);
         }
 
         @keyframes fadeIn {
@@ -230,23 +166,10 @@
             30% { transform: translateY(-10px); opacity: 1; }
         }
 
-        /* Mobile responsiveness */
         @media (max-width: 768px) {
             .chatbot-container {
                 margin: 1rem;
                 height: 500px;
-            }
-            
-            .customization-panel {
-                width: 100%;
-                right: -100%;
-                top: 80px;
-                height: calc(100vh - 80px);
-                border-radius: 0;
-            }
-            
-            .customize-toggle {
-                top: 90px;
             }
         }
     </style>
@@ -264,47 +187,6 @@
         </ul>
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
     </nav>
-
-    <!-- Customization toggle -->
-    <button class="customize-toggle" onclick="toggleCustomization()">🎨</button>
-
-    <!-- Customization panel -->
-    <div class="customization-panel" id="customization-panel">
-        <h3 style="margin-bottom: 1rem; color: var(--text-color);">Customize Chat</h3>
-        
-        <div class="custom-option">
-            <label>Font Size:</label>
-            <select id="font-size" onchange="updateChatStyle()">
-                <option value="0.95rem">Small</option>
-                <option value="1rem" selected>Medium</option>
-                <option value="1.1rem">Large</option>
-            </select>
-        </div>
-
-        <div class="custom-option">
-            <label>Chat Theme:</label>
-            <select id="chat-theme" onchange="updateChatTheme()">
-                <option value="default" selected>Haven Default</option>
-                <option value="ocean">Ocean Blue</option>
-                <option value="sunset">Warm Sunset</option>
-                <option value="forest">Forest Green</option>
-            </select>
-        </div>
-
-        <div class="custom-option">
-            <label>Message Style:</label>
-            <select id="message-style" onchange="updateMessageStyle()">
-                <option value="rounded" selected>Rounded</option>
-                <option value="square">Square</option>
-                <option value="bubble">Bubble</option>
-            </select>
-        </div>
-
-        <div class="custom-option">
-            <label>Bot Name:</label>
-            <input type="text" id="bot-name" value="Haven AI" onchange="updateBotName()" placeholder="Enter bot name">
-        </div>
-    </div>
 
     <!-- Chatbot Section -->
     <section class="hero">
@@ -353,77 +235,6 @@
     <script>
         let isTyping = false;
 
-        function toggleCustomization() {
-            const panel = document.getElementById('customization-panel');
-            panel.classList.toggle('open');
-        }
-
-        function updateChatStyle() {
-            const fontSize = document.getElementById('font-size').value;
-            const messages = document.querySelectorAll('.message');
-            messages.forEach(msg => {
-                msg.style.fontSize = fontSize;
-            });
-        }
-
-        function updateChatTheme() {
-            const theme = document.getElementById('chat-theme').value;
-            const root = document.documentElement;
-            
-            switch(theme) {
-                case 'ocean':
-                    root.style.setProperty('--green-light', '#e3f2fd');
-                    root.style.setProperty('--green-soft', '#bbdefb');
-                    root.style.setProperty('--green-gentle', '#90caf9');
-                    root.style.setProperty('--green-accent', '#81d4fa');
-                    root.style.setProperty('--warm-accent', '#ffcc80');
-                    break;
-                case 'sunset':
-                    root.style.setProperty('--green-light', '#fff3e0');
-                    root.style.setProperty('--green-soft', '#ffcc02');
-                    root.style.setProperty('--green-gentle', '#ffb74d');
-                    root.style.setProperty('--green-accent', '#ffab91');
-                    root.style.setProperty('--warm-accent', '#ff8a65');
-                    break;
-                case 'forest':
-                    root.style.setProperty('--green-light', '#e8f5e8');
-                    root.style.setProperty('--green-soft', '#c8e6c9');
-                    root.style.setProperty('--green-gentle', '#a5d6a7');
-                    root.style.setProperty('--green-accent', '#81c784');
-                    root.style.setProperty('--warm-accent', '#aed581');
-                    break;
-                default: // Haven default
-                    root.style.setProperty('--green-light', '#d9f7e1');
-                    root.style.setProperty('--green-soft', '#bdead5');
-                    root.style.setProperty('--green-gentle', '#a7e0c7');
-                    root.style.setProperty('--green-accent', '#cde8e4');
-                    root.style.setProperty('--warm-accent', '#e6d7c5');
-            }
-        }
-
-        function updateMessageStyle() {
-            const style = document.getElementById('message-style').value;
-            const messages = document.querySelectorAll('.message');
-            
-            messages.forEach(msg => {
-                switch(style) {
-                    case 'square':
-                        msg.style.borderRadius = '5px';
-                        break;
-                    case 'bubble':
-                        msg.style.borderRadius = '25px';
-                        break;
-                    default: // rounded
-                        msg.style.borderRadius = '20px';
-                }
-            });
-        }
-
-        function updateBotName() {
-            const name = document.getElementById('bot-name').value || 'Haven AI';
-            document.getElementById('bot-display-name').textContent = name + ' Assistant';
-        }
-
         function handleKeyPress(event) {
             if (event.key === 'Enter' && !isTyping) {
                 sendMessage();
@@ -438,19 +249,15 @@
             
             if (!message) return;
 
-            // Add user message to chat
             addMessage(message, 'user');
             input.value = '';
 
-            // Show typing indicator
             showTyping();
 
             try {
                 const response = await fetch('/chat', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: message })
                 });
 
@@ -475,23 +282,6 @@
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${sender}-message`;
             messageDiv.textContent = text;
-            
-            // Apply current styling preferences
-            const fontSize = document.getElementById('font-size').value;
-            const messageStyle = document.getElementById('message-style').value;
-            
-            messageDiv.style.fontSize = fontSize;
-            switch(messageStyle) {
-                case 'square':
-                    messageDiv.style.borderRadius = '5px';
-                    break;
-                case 'bubble':
-                    messageDiv.style.borderRadius = '25px';
-                    break;
-                default:
-                    messageDiv.style.borderRadius = '20px';
-            }
-            
             messagesContainer.appendChild(messageDiv);
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
@@ -517,7 +307,7 @@
             sendButton.disabled = false;
         }
 
-        // Mobile menu toggle (from original script.js functionality)
+        // Mobile menu toggle
         document.getElementById('menu-toggle')?.addEventListener('click', function() {
             const navLinks = document.getElementById('nav-links');
             navLinks.classList.toggle('show');
@@ -525,5 +315,3 @@
     </script>
 </body>
 </html>
-
-
