@@ -1,5 +1,6 @@
-Flask
+flask
 pandas
 plotly
-gunicorn
 requests
+gunicorn
+python-dotenv
