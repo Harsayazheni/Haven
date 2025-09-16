@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven - Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Chatbot specific styles - customizable */
+        .chatbot-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, var(--green-soft), var(--green-gentle));
+            padding: 1.5rem;
+            color: var(--text-color);
+            text-align: center;
+            border-bottom: 2px solid var(--green-accent);
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .chat-header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            background: var(--green-light);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: var(--warm-accent);
+            color: var(--text-color);
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: white;
+            color: var(--text-color);
+            border: 1px solid var(--green-accent);
+            border-bottom-left-radius: 5px;
+        }
+
+        .typing-indicator {
+            align-self: flex-start;
+            background: white;
+            border: 1px solid var(--green-accent);
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            border-bottom-left-radius: 5px;
+            display: none;
+        }
+
+        .typing-dots {
+            display: inline-flex;
+            gap: 4px;
+        }
+
+        .typing-dots span {
+            height: 8px;
+            width: 8px;
+            background: var(--green-gentle);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        .chat-input-container {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid var(--green-accent);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--green-accent);
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            background: var(--green-light);
+            color: var(--text-color);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .chat-input:focus {
+            border-color: var(--green-gentle);
+            box-shadow: 0 0 0 3px rgba(167, 224, 199, 0.2);
+        }
+
+        .send-button {
+            padding: 1rem 1.5rem;
+            background: var(--green-gentle);
+            color: var(--text-color);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            min-width: 80px;
+        }
+
+        .send-button:hover:not(:disabled) {
+            background: var(--green-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(167, 224, 199, 0.3);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .welcome-message {
+            text-align: center;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-style: italic;
+            margin: 2rem 0;
+        }
+
+        /* Customization panel */
+        .customization-panel {
+            position: fixed;
+            top: 100px;
+            right: -300px;
+            width: 280px;
+            height: 400px;
+            background: white;
+            border-radius: 15px 0 0 15px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            border: 2px solid var(--green-accent);
+        }
+
+        .customization-panel.open {
+            right: 0;
+        }
+
+        .customize-toggle {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: var(--green-gentle);
+            color: var(--text-color);
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .customize-toggle:hover {
+            background: var(--green-soft);
+            transform: scale(1.1);
+        }
+
+        .custom-option {
+            margin-bottom: 1rem;
+        }
+
+        .custom-option label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .custom-option input,
+        .custom-option select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--green-accent);
+            border-radius: 5px;
+            background: var(--green-light);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-10px); opacity: 1; }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .chatbot-container {
+                margin: 1rem;
+                height: 500px;
+            }
+            
+            .customization-panel {
+                width: 100%;
+                right: -100%;
+                top: 80px;
+                height: calc(100vh - 80px);
+                border-radius: 0;
+            }
+            
+            .customize-toggle {
+                top: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Haven</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/visualization">Visualization</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/chatbot" class="active">Chatbot</a></li>
+            <li><a href="#">Developers</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Customization toggle -->
+    <button class="customize-toggle" onclick="toggleCustomization()">🎨</button>
+
+    <!-- Customization panel -->
+    <div class="customization-panel" id="customization-panel">
+        <h3 style="margin-bottom: 1rem; color: var(--text-color);">Customize Chat</h3>
+        
+        <div class="custom-option">
+            <label>Font Size:</label>
+            <select id="font-size" onchange="updateChatStyle()">
+                <option value="0.95rem">Small</option>
+                <option value="1rem" selected>Medium</option>
+                <option value="1.1rem">Large</option>
+            </select>
+        </div>
+
+        <div class="custom-option">
+            <label>Chat Theme:</label>
+            <select id="chat-theme" onchange="updateChatTheme()">
+                <option value="default" selected>Haven Default</option>
+                <option value="ocean">Ocean Blue</option>
+                <option value="sunset">Warm Sunset</option>
+                <option value="forest">Forest Green</option>
+            </select>
+        </div>
+
+        <div class="custom-option">
+            <label>Message Style:</label>
+            <select id="message-style" onchange="updateMessageStyle()">
+                <option value="rounded" selected>Rounded</option>
+                <option value="square">Square</option>
+                <option value="bubble">Bubble</option>
+            </select>
+        </div>
+
+        <div class="custom-option">
+            <label>Bot Name:</label>
+            <input type="text" id="bot-name" value="Haven AI" onchange="updateBotName()" placeholder="Enter bot name">
+        </div>
+    </div>
+
+    <!-- Chatbot Section -->
+    <section class="hero">
+        <h1>Mental Health Chatbot</h1>
+        <p>Talk with our AI-powered chatbot to get support and guidance.</p>
+    </section>
+
+    <section class="section">
+        <h2>Chat with Haven's AI</h2>
+        <div class="chatbot-container">
+            <div class="chat-header">
+                <h3 id="bot-display-name">Haven AI Assistant</h3>
+                <p>I'm here to listen and support you 💚</p>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-message">
+                    👋 Welcome! I'm here to provide emotional support and mental wellness guidance. 
+                    How are you feeling today?
+                </div>
+            </div>
+
+            <div class="typing-indicator" id="typing-indicator">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <input 
+                    type="text" 
+                    id="chat-input" 
+                    class="chat-input" 
+                    placeholder="Type your message here..."
+                    onkeypress="handleKeyPress(event)"
+                >
+                <button id="send-button" class="send-button" onclick="sendMessage()">
+                    Send
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let isTyping = false;
+
+        function toggleCustomization() {
+            const panel = document.getElementById('customization-panel');
+            panel.classList.toggle('open');
+        }
+
+        function updateChatStyle() {
+            const fontSize = document.getElementById('font-size').value;
+            const messages = document.querySelectorAll('.message');
+            messages.forEach(msg => {
+                msg.style.fontSize = fontSize;
+            });
+        }
+
+        function updateChatTheme() {
+            const theme = document.getElementById('chat-theme').value;
+            const root = document.documentElement;
+            
+            switch(theme) {
+                case 'ocean':
+                    root.style.setProperty('--green-light', '#e3f2fd');
+                    root.style.setProperty('--green-soft', '#bbdefb');
+                    root.style.setProperty('--green-gentle', '#90caf9');
+                    root.style.setProperty('--green-accent', '#81d4fa');
+                    root.style.setProperty('--warm-accent', '#ffcc80');
+                    break;
+                case 'sunset':
+                    root.style.setProperty('--green-light', '#fff3e0');
+                    root.style.setProperty('--green-soft', '#ffcc02');
+                    root.style.setProperty('--green-gentle', '#ffb74d');
+                    root.style.setProperty('--green-accent', '#ffab91');
+                    root.style.setProperty('--warm-accent', '#ff8a65');
+                    break;
+                case 'forest':
+                    root.style.setProperty('--green-light', '#e8f5e8');
+                    root.style.setProperty('--green-soft', '#c8e6c9');
+                    root.style.setProperty('--green-gentle', '#a5d6a7');
+                    root.style.setProperty('--green-accent', '#81c784');
+                    root.style.setProperty('--warm-accent', '#aed581');
+                    break;
+                default: // Haven default
+                    root.style.setProperty('--green-light', '#d9f7e1');
+                    root.style.setProperty('--green-soft', '#bdead5');
+                    root.style.setProperty('--green-gentle', '#a7e0c7');
+                    root.style.setProperty('--green-accent', '#cde8e4');
+                    root.style.setProperty('--warm-accent', '#e6d7c5');
+            }
+        }
+
+        function updateMessageStyle() {
+            const style = document.getElementById('message-style').value;
+            const messages = document.querySelectorAll('.message');
+            
+            messages.forEach(msg => {
+                switch(style) {
+                    case 'square':
+                        msg.style.borderRadius = '5px';
+                        break;
+                    case 'bubble':
+                        msg.style.borderRadius = '25px';
+                        break;
+                    default: // rounded
+                        msg.style.borderRadius = '20px';
+                }
+            });
+        }
+
+        function updateBotName() {
+            const name = document.getElementById('bot-name').value || 'Haven AI';
+            document.getElementById('bot-display-name').textContent = name + ' Assistant';
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !isTyping) {
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            if (isTyping) return;
+            
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            // Add user message to chat
+            addMessage(message, 'user');
+            input.value = '';
+
+            // Show typing indicator
+            showTyping();
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    hideTyping();
+                    addMessage(data.response, 'bot');
+                } else {
+                    hideTyping();
+                    addMessage('I apologize, but I\'m having trouble connecting right now. Please try again in a moment.', 'bot');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                hideTyping();
+                addMessage('I\'m sorry, there was an error processing your message. Please try again.', 'bot');
+            }
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = text;
+            
+            // Apply current styling preferences
+            const fontSize = document.getElementById('font-size').value;
+            const messageStyle = document.getElementById('message-style').value;
+            
+            messageDiv.style.fontSize = fontSize;
+            switch(messageStyle) {
+                case 'square':
+                    messageDiv.style.borderRadius = '5px';
+                    break;
+                case 'bubble':
+                    messageDiv.style.borderRadius = '25px';
+                    break;
+                default:
+                    messageDiv.style.borderRadius = '20px';
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function showTyping() {
+            isTyping = true;
+            const typingIndicator = document.getElementById('typing-indicator');
+            const messagesContainer = document.getElementById('chat-messages');
+            const sendButton = document.getElementById('send-button');
+            
+            typingIndicator.style.display = 'block';
+            messagesContainer.appendChild(typingIndicator);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            sendButton.disabled = true;
+        }
+
+        function hideTyping() {
+            isTyping = false;
+            const typingIndicator = document.getElementById('typing-indicator');
+            const sendButton = document.getElementById('send-button');
+            
+            typingIndicator.style.display = 'none';
+            sendButton.disabled = false;
+        }
+
+        // Mobile menu toggle (from original script.js functionality)
+        document.getElementById('menu-toggle')?.addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
+
+

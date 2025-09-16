@@ -1,0 +1,141 @@
+Timestamp,AcadStage,PeerPressure,HomePressure,StudyEnv,Coping,BadHabits,AcadCompetition,Rate your academic stress index 
+2025-07-24 22:05:39,Undergraduate,4,5,Noisy,Analyze the situation and handle it with intellect,No,3,5
+2025-07-24 22:05:52,Undergraduate,3,4,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-07-24 22:06:39,Undergraduate,1,1,Peaceful,"Social support (friends, family)",No,2,4
+2025-07-24 22:06:45,Undergraduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 22:08:06,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,5
+2025-07-24 22:08:13,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:09:21,Undergraduate,5,5,Disrupted,Emotional breakdown (crying a lot),No,4,4
+2025-07-24 22:10:06,Undergraduate,3,2,Peaceful,"Social support (friends, family)",No,3,3
+2025-07-24 22:11:01,Undergraduate,2,2,Peaceful,Analyze the situation and handle it with intellect,No,2,2
+2025-07-24 22:11:19,Undergraduate,2,2,Peaceful,Analyze the situation and handle it with intellect,No,4,2
+2025-07-24 22:12:12,Undergraduate,3,2,Disrupted,Emotional breakdown (crying a lot),No,3,5
+2025-07-24 22:12:24,Undergraduate,4,5,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-07-24 22:12:27,Undergraduate,2,3,Noisy,Emotional breakdown (crying a lot),No,2,2
+2025-07-24 22:12:48,Undergraduate,2,3,Disrupted,Analyze the situation and handle it with intellect,No,4,2
+2025-07-24 22:14:16,Undergraduate,3,4,Disrupted,"Social support (friends, family)",Prefer not to say,3,4
+2025-07-24 22:15:06,Undergraduate,5,5,Noisy,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:15:39,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,5,5
+2025-07-24 22:16:10,Undergraduate,3,5,Disrupted,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 22:16:53,Undergraduate,3,3,Peaceful,Emotional breakdown (crying a lot),No,4,3
+2025-07-24 22:17:46,Undergraduate,3,4,Peaceful,"Social support (friends, family)",No,4,3
+2025-07-24 22:18:02,Undergraduate,4,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:18:44,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 22:18:55,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 22:18:58,Undergraduate,5,1,Disrupted,Analyze the situation and handle it with intellect,No,5,3
+2025-07-24 22:19:06,Undergraduate,4,5,Disrupted,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:19:22,Undergraduate,4,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:19:25,Undergraduate,4,5,Disrupted,Analyze the situation and handle it with intellect,Yes,4,5
+2025-07-24 22:19:33,High school,3,4,Disrupted,Analyze the situation and handle it with intellect,No,3,4
+2025-07-24 22:19:51,Undergraduate,5,1,Disrupted,"Social support (friends, family)",No,4,5
+2025-07-24 22:20:28,Undergraduate,4,3,Peaceful,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 22:21:04,Undergraduate,5,5,Disrupted,Emotional breakdown (crying a lot),Yes,5,5
+2025-07-24 22:23:15,Undergraduate,3,1,Disrupted,Emotional breakdown (crying a lot),No,4,4
+2025-07-24 22:24:13,Undergraduate,3,2,Peaceful,Emotional breakdown (crying a lot),No,4,3
+2025-07-24 22:24:53,Undergraduate,1,1,Peaceful,Analyze the situation and handle it with intellect,Prefer not to say,1,1
+2025-07-24 22:25:17,Undergraduate,1,1,Peaceful,"Social support (friends, family)",Prefer not to say,4,3
+2025-07-24 22:25:27,Undergraduate,3,4,Noisy,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 22:25:41,Undergraduate,4,5,Disrupted,Emotional breakdown (crying a lot),Yes,2,3
+2025-07-24 22:28:58,Undergraduate,1,4,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:29:26,Undergraduate,3,4,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-07-24 22:30:29,Undergraduate,3,2,Peaceful,"Social support (friends, family)",No,3,4
+2025-07-24 22:32:22,Undergraduate,3,4,Disrupted,Analyze the situation and handle it with intellect,No,5,5
+2025-07-24 22:32:36,Post-graduate,3,5,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-07-24 22:32:37,Undergraduate,3,5,Peaceful,Analyze the situation and handle it with intellect,No,4,5
+2025-07-24 22:33:48,Undergraduate,5,4,Disrupted,Emotional breakdown (crying a lot),No,5,5
+2025-07-24 22:34:34,Undergraduate,4,2,Noisy,Analyze the situation and handle it with intellect,No,2,2
+2025-07-24 22:34:41,Undergraduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 22:34:53,Undergraduate,5,5,Noisy,Emotional breakdown (crying a lot),Prefer not to say,4,5
+2025-07-24 22:38:47,Undergraduate,2,4,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:39:36,Undergraduate,3,4,Noisy,Emotional breakdown (crying a lot),Yes,4,5
+2025-07-24 22:41:41,Undergraduate,2,3,Disrupted,"Social support (friends, family)",No,2,3
+2025-07-24 22:42:11,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 22:42:25,Undergraduate,4,4,Noisy,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 22:42:48,Undergraduate,4,5,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 22:44:07,Undergraduate,3,3,Disrupted,Emotional breakdown (crying a lot),Yes,3,3
+2025-07-24 22:44:50,Undergraduate,3,1,Noisy,Analyze the situation and handle it with intellect,Yes,4,4
+2025-07-24 23:01:02,Undergraduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 23:02:49,Post-graduate,4,4,Disrupted,Analyze the situation and handle it with intellect,Prefer not to say,4,4
+2025-07-24 23:03:10,Undergraduate,3,1,Noisy,Analyze the situation and handle it with intellect,No,4,3
+2025-07-24 23:04:01,Undergraduate,2,3,Disrupted,Analyze the situation and handle it with intellect,No,3,5
+2025-07-24 23:15:48,Undergraduate,3,1,Noisy,Analyze the situation and handle it with intellect,No,5,4
+2025-07-24 23:22:17,Undergraduate,2,1,Peaceful,Emotional breakdown (crying a lot),No,3,2
+2025-07-24 23:31:01,Undergraduate,2,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-24 23:32:26,Undergraduate,4,4,Disrupted,Emotional breakdown (crying a lot),No,4,4
+2025-07-24 23:36:22,Undergraduate,3,3,Disrupted,Analyze the situation and handle it with intellect,No,3,3
+2025-07-24 23:44:35,Undergraduate,3,2,Peaceful,Emotional breakdown (crying a lot),No,2,2
+2025-07-25 00:10:10,Undergraduate,4,5,Disrupted,Emotional breakdown (crying a lot),No,2,5
+2025-07-25 00:13:46,Undergraduate,4,3,Peaceful,Analyze the situation and handle it with intellect,No,4,5
+2025-07-25 00:21:30,Undergraduate,3,5,Disrupted,Emotional breakdown (crying a lot),No,3,4
+2025-07-25 00:21:38,Undergraduate,4,2,Disrupted,Analyze the situation and handle it with intellect,No,1,1
+2025-07-25 08:13:01,Undergraduate,3,3,Disrupted,Analyze the situation and handle it with intellect,No,3,4
+2025-07-25 08:42:22,Undergraduate,4,3,Disrupted,Analyze the situation and handle it with intellect,No,4,4
+2025-07-25 10:30:12,Undergraduate,3,3,Disrupted,Analyze the situation and handle it with intellect,No,4,4
+2025-07-25 10:37:39,Undergraduate,1,1,Noisy,Analyze the situation and handle it with intellect,No,1,1
+2025-07-25 10:43:24,Undergraduate,3,3,Disrupted,Analyze the situation and handle it with intellect,No,4,4
+2025-07-25 11:00:10,Undergraduate,5,5,Noisy,Emotional breakdown (crying a lot),No,3,5
+2025-07-25 11:06:32,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-07-25 11:06:40,Undergraduate,2,3,Noisy,"Social support (friends, family)",No,2,3
+2025-07-25 11:47:24,Undergraduate,3,4,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-07-25 13:17:44,Post-graduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,5,4
+2025-07-25 13:18:47,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,Prefer not to say,3,5
+2025-07-25 13:38:10,Undergraduate,2,2,Peaceful,Analyze the situation and handle it with intellect,No,1,1
+2025-07-25 16:00:32,Undergraduate,5,3,Peaceful,Emotional breakdown (crying a lot),No,4,5
+2025-07-25 16:04:38,Undergraduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-07-25 16:31:45,Post-graduate,1,5,Peaceful,Analyze the situation and handle it with intellect,No,5,3
+2025-07-25 17:08:00,Undergraduate,2,2,Disrupted,"Social support (friends, family)",No,5,4
+2025-07-25 17:51:17,Post-graduate,4,4,Noisy,Analyze the situation and handle it with intellect,No,4,3
+2025-07-25 18:18:38,Undergraduate,2,3,Peaceful,"Social support (friends, family)",No,3,3
+2025-07-25 18:27:24,Undergraduate,2,3,Peaceful,Analyze the situation and handle it with intellect,Prefer not to say,3,3
+2025-07-25 19:34:59,Undergraduate,2,5,Peaceful,"Social support (friends, family)",No,4,5
+2025-07-25 20:37:52,Post-graduate,2,2,Noisy,Analyze the situation and handle it with intellect,No,4,4
+2025-07-25 23:34:18,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,Yes,4,4
+2025-07-25 23:39:15,Undergraduate,2,2,Peaceful,Analyze the situation and handle it with intellect,No,4,3
+2025-07-26 07:25:43,High school,4,5,Peaceful,Analyze the situation and handle it with intellect,No,4,5
+2025-07-26 07:33:35,High school,3,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-26 07:34:28,High school,4,5,Noisy,Emotional breakdown (crying a lot),No,5,5
+2025-07-26 07:50:38,High school,3,3,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-07-26 08:13:18,High school,2,3,Noisy,Emotional breakdown (crying a lot),No,3,4
+2025-07-26 08:25:17,High school,1,2,Peaceful,Analyze the situation and handle it with intellect,No,5,3
+2025-07-26 08:25:18,High school,4,4,Disrupted,Emotional breakdown (crying a lot),No,2,5
+2025-07-26 08:27:10,High school,4,3,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-26 08:40:35,High school,4,5,Noisy,Emotional breakdown (crying a lot),No,3,4
+2025-07-26 08:57:40,High school,1,5,Noisy,Analyze the situation and handle it with intellect,No,5,5
+2025-07-26 09:28:08,High school,5,5,Peaceful,Emotional breakdown (crying a lot),No,3,5
+2025-07-26 09:36:09,High school,1,3,Peaceful,"Social support (friends, family)",No,3,1
+2025-07-26 09:47:04,High school,5,3,Noisy,Emotional breakdown (crying a lot),No,4,5
+2025-07-26 09:56:32,High school,3,3,Noisy,Analyze the situation and handle it with intellect,No,4,3
+2025-07-26 10:01:33,High school,4,4,Disrupted,Emotional breakdown (crying a lot),No,4,5
+2025-07-26 10:04:32,High school,2,3,Noisy,"Social support (friends, family)",No,3,4
+2025-07-26 10:38:24,High school,3,3,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-07-26 10:39:37,High school,2,4,Peaceful,Emotional breakdown (crying a lot),No,3,3
+2025-07-26 11:36:30,High school,2,4,Noisy,Analyze the situation and handle it with intellect,No,4,3
+2025-07-26 13:39:21,Undergraduate,1,1,Noisy,Analyze the situation and handle it with intellect,No,3,3
+2025-07-26 14:21:53,High school,1,3,Noisy,Analyze the situation and handle it with intellect,No,5,3
+2025-07-26 14:23:45,High school,3,4,Noisy,Emotional breakdown (crying a lot),No,3,3
+2025-07-26 18:45:13,High school,1,1,Peaceful,Emotional breakdown (crying a lot),No,1,1
+2025-07-26 21:37:46,High school,3,4,Peaceful,"Social support (friends, family)",No,2,2
+2025-07-26 22:11:02,High school,3,1,Noisy,Analyze the situation and handle it with intellect,No,4,4
+2025-07-27 13:45:00,Undergraduate,2,3,Noisy,Analyze the situation and handle it with intellect,No,3,5
+2025-07-27 22:56:54,High school,2,2,Peaceful,Analyze the situation and handle it with intellect,No,4,4
+2025-07-30 06:43:55,High school,4,5,Peaceful,Analyze the situation and handle it with intellect,No,3,5
+2025-07-30 16:02:16,Undergraduate,4,4,Disrupted,Analyze the situation and handle it with intellect,No,4,4
+2025-08-11 12:15:00,Post-graduate,3,4,Peaceful,"Social support (friends, family)",No,1,4
+2025-08-11 18:07:26,Undergraduate,5,1,Noisy,Analyze the situation and handle it with intellect,Yes,5,5
+2025-08-11 19:29:07,Post-graduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,3,3
+2025-08-12 02:28:42,Post-graduate,3,4,Peaceful,"Social support (friends, family)",No,2,4
+2025-08-12 08:11:48,Post-graduate,3,1,Disrupted,"Social support (friends, family)",No,4,5
+2025-08-12 08:49:45,High school,4,5,Noisy,Emotional breakdown (crying a lot),No,3,5
+2025-08-12 08:56:07,Undergraduate,3,5,Peaceful,Analyze the situation and handle it with intellect,Yes,4,5
+2025-08-12 10:03:58,Undergraduate,3,4,Disrupted,"Social support (friends, family)",No,2,4
+2025-08-12 12:13:46,Undergraduate,5,5,Peaceful,Emotional breakdown (crying a lot),No,5,4
+2025-08-12 13:16:50,Undergraduate,2,2,Noisy,Analyze the situation and handle it with intellect,No,4,4
+2025-08-12 15:01:20,High school,4,4,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-08-13 21:45:58,Undergraduate,1,1,Peaceful,Analyze the situation and handle it with intellect,No,2,2
+2025-08-14 06:10:01,Post-graduate,4,3,Disrupted,Emotional breakdown (crying a lot),Yes,2,4
+2025-08-14 21:06:15,Undergraduate,5,3,Disrupted,Analyze the situation and handle it with intellect,No,2,4
+2025-08-17 13:02:04,Undergraduate,3,2,Peaceful,Analyze the situation and handle it with intellect,No,3,4
+2025-08-18 14:36:00,Undergraduate,4,2,Disrupted,Analyze the situation and handle it with intellect,No,3,3
+2025-08-18 17:13:52,Undergraduate,3,3,Peaceful,Analyze the situation and handle it with intellect,No,2,4
+2025-08-18 19:08:52,Undergraduate,4,5,Disrupted,"Social support (friends, family)",No,5,5
+2025-08-18 22:40:13,Undergraduate,4,2,Peaceful,"Social support (friends, family)",No,4,4

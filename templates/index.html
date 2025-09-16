@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haven - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Haven</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About Haven</a></li>
+            <li><a href="/visualization">Visualization</a></li>
+            <li><a href="/prediction">Prediction</a></li>
+            <li><a href="/chatbot">Chatbot</a></li>
+            <li><a href="#">Developers</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Haven</h1>
+        <p>Your safe space for mental wellness, insights, and support.</p>
+        <a href="#about" class="cta-button">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Haven</h2>
+        <p>
+            Haven is an AI-powered platform focused on mental wellness. 
+            Explore visualizations, predictions, and interact with our empathetic chatbot.
+        </p>
+    </section>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
