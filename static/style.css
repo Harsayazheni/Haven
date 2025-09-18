@@ -246,3 +246,45 @@
     font-size: 0.95rem;
     color: #555;
 }
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: var(--green-light);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+form input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    background: var(--warm-accent);
+    color: var(--text-color);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: var(--green-gentle);
+}

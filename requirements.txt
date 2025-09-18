@@ -4,3 +4,5 @@ plotly
 requests
 gunicorn
 python-dotenv
+scikit-learn
+joblib
